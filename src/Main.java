@@ -11,19 +11,17 @@ public class Main {
 
         LinkedList<Character> maxGlobal = new LinkedList<>();
 
-        for (int i = 0; i < string.length(); i++) {
+        for(int i = 0; i < string.length(); i++){
             LinkedList<Character> maxStartAtI = new LinkedList<>();
             maxStartAtI.add(string.charAt(i));
 
-            for (int j = i + 1; j < string.length(); j++) {
-                if (string.charAt(j) > maxStartAtI.getLast()) {
+            for (int j = i+1; j < string.length(); j++){
+                if(string.charAt(j) > maxStartAtI.getLast()){
                     maxStartAtI.add(string.charAt(j));
-                } else {
-                    break;
                 }
             }
 
-            if (maxGlobal.size() < maxStartAtI.size()) {
+            if (maxGlobal.size() < maxStartAtI.size()){
                 maxGlobal.clear();
                 maxGlobal.addAll(maxStartAtI);
             }
@@ -31,9 +29,10 @@ public class Main {
         }
 
 
-        for (Character ch : maxGlobal) {
+        for (Character ch: maxGlobal) {
             System.out.print(ch);
         }
         System.out.println();
     }
+
 }
